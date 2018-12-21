@@ -62,7 +62,7 @@ class HomeIndex extends React.Component {
         const siteTitle = "Taquizos Chuy"
         const siteDescription = "Taco Catering Services"
         const formEmail = `https://formspree.io/${EMAIL}`
-        console.log(formEmail)
+        // console.log(formEmail)
         return (
             <Layout>
                 <Helmet>
