@@ -99,7 +99,7 @@ export const SIDES = [
     'Fresh Vegetables'
 ]
 
-export const DRINKS = ['Horchata', 'Sodas', 'Water', 'Coffee', 'Jamaica', 'Aguas Frescas (Fresh Fruit Water)']
+export const DRINKS = ['Horchata', 'Sodas', 'Water', 'Coffee', 'Jamaica', 'Aguas Frescas']
 
 export const EMAIL = 'jesusmiranda702@gmail.com'
 export const PHONE = '253-620-0380'

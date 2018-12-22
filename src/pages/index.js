@@ -63,6 +63,7 @@ class HomeIndex extends React.Component {
         const siteDescription = "Taco Catering Services"
         const formEmail = `https://formspree.io/${EMAIL}`
         // console.log(formEmail)
+        const smallWindow = window.innerHeight && window.innerHeight < 800
         return (
             <Layout>
                 <Helmet>
@@ -77,35 +78,42 @@ class HomeIndex extends React.Component {
                     <section id="one" name="intro">
                         <header className="major">
                             <h2>Tacos (Taquizas) Chuy</h2>
+                            <hr/>
                             <p className='header-sub'>Street Taco Catering for the greater South Washington Area.</p>
                         </header>
 
                         <p className='header-sub2'>We serve events big and small for any of the following needs:</p>
+                        <div class="container">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-6 col-xs-12 col-lg-4">
+                                    <h2 className='item-category'>Fresh Tacos:</h2>
+                                    <ul>
+                                        {FOOD_ITEMS.map((item, i) => {
+                                            return <li className='food-item' key={i}>{item}</li>
+                                        })}
+                                    </ul>
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-xs-12 col-lg-4">
 
-                        <Grid>
-                            <Row><Col xs={12} md={4}>
-                                <h2>Fresh Tacos:</h2>
-                                <ul>
-                                    {FOOD_ITEMS.map((item, i) => {
-                                        return <li className='food-item' key={i}>{item}</li>
-                                    })}
-                                </ul>
-                            </Col><Col xs={12} md={4}>
-                                    <h2>Sides:</h2>
+                                    <h2 className='item-category'>Sides:</h2>
                                     <ul>
                                         {SIDES.map((item, i) => {
                                             return <li className='food-item' key={i}>{item}</li>
                                         })}
                                     </ul>
-                                </Col><Col xs={12} md={4}>
-                                    <h2>Drinks:</h2>
+                                </div>
+                                <div class="col-sm-12 col-md-6 col-xs-12 col-lg-4">
+
+                                    <h2 className='item-category'>Drinks:</h2>
                                     <ul>
                                         {DRINKS.map((item, i) => {
                                             return <li className='food-item' key={i}>{item}</li>
                                         })}
                                     </ul>
-                                </Col></Row>
-                        </Grid>
+                                </div>
+                            </div>
+                        </div>
+
                         <p className="home-subtitle">
                             <b>Full Service: Prices typically run between $9-14 per person depending on the number of people and food requested. Can serve between 50 to 500+ people! </b>
                         </p>
@@ -128,21 +136,23 @@ class HomeIndex extends React.Component {
                     </section>
 
                     <section id="three" name="contact">
-                        <h2>Get In Touch!</h2>
-                        <p>Contact us via phone or the form below with your request, and we'll get back to you!</p>
+                        <h2 className='header-sub'>Get In Touch!</h2>
+                        <p className='header-sub2'>Contact us via phone, or the submit the form below with your request, and we'll get back to you!</p>
                         <div className="row">
                             <div className="8u 12u$(small)">
                                 <form action={formEmail} method="POST">
                                     <div className="row uniform 50%">
                                         <div className="6u 12u$(xsmall)"><input type="text" name="name" id="name" placeholder="Name" /></div>
                                         <div className="6u 12u$(xsmall)"><input type="email" name="email" id="email" placeholder="Email" /></div>
-                                        <div className="12u"><textarea name="message" id="message" placeholder="Describe the services you need." rows="4"></textarea></div>
+                                        <div className="12u"><textarea name="message" id="message" placeholder="Describe the services you need" rows="4"></textarea></div>
                                     </div>
+                                    <br/>
                                     <ul className="actions">
-                                        <li><input type="submit" value="Send a Business Inquiry" /></li>
+                                        <li><input type="submit" value="Send us a Business Inquiry" /></li>
                                     </ul>
+                                    <hr/>
                                 </form>
-                        
+
                             </div>
                             <div className="4u 12u$(small)">
                                 <ul className="labeled-icons">

@@ -1,8 +1,8 @@
 module.exports = {
   siteMetadata: {
-    title: "Gatsby Starter - Strata by HTML5 UP",
-    author: "Hunter Chang",
-    description: "A Gatsby.js Starter based on Strata by HTML5 UP"
+    title: "Taquizas Chuy",
+    author: "Taquizas Chuy",
+    description: "Street Taco Catering for the South Washington Area.",
   },
   plugins: [
     'gatsby-plugin-react-helmet',
