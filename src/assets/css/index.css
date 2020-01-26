@@ -1,40 +1,40 @@
-
 .black-bar {
-    height: 50px;
-    background: #333;
+	height: 50px;
+	background: #333;
 }
 
 .header-sub {
-    font-size: 24px;
-    color: black
+	font-size: 24px;
+	color: black;
 }
 
 .header-sub2 {
-    font-size: 18px;
-    font-weight: bold;
+	font-size: 18px;
+	font-weight: bold;
 }
 
 .food-item {
-    font-weight: bold;
-    font-size: 18px;
-    color: black;
+	font-weight: bold;
+	font-size: 18px;
+	color: black;
 }
 
 .item-category {
-    color: green;
-    font-weight: bolder;
+	color: green;
+	font-weight: bolder;
 }
 
 .card-img {
-    width: 400px;
-    margin: 0 auto;
+	text-align: center;
+	width: 400px;
+	margin: 0 auto;
 }
 
 .logo-img {
-    width: 600px;
-    margin: 0 auto;
+	width: 600px;
+	margin: 0 auto;
 }
 
 .home-subtitle {
-    font-size: 20px;
+	font-size: 20px;
 }
