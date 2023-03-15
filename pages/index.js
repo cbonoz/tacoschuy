@@ -125,7 +125,7 @@ class HomeIndex extends React.Component {
 						<p className="home-subtitle">
 							
 							<b>
-								Full Service: We'll work with you to create a menu that fits your needs and budget 
+								Full Service: We will work with you to create a menu that fits your needs and budget 
 								depending on the number of people. Rates typically start at $15 per person.
 							</b>
 						</p>
