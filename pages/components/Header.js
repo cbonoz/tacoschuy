@@ -11,13 +11,15 @@ class Header extends React.Component {
                 backgroundImage: `url(${bg.src})`,
                 backgroundSize: 'cover',
                 // opacity: '0.5',
-                }}>
+            }}>
                 <div className="inner">
                     <Image src={'/avatar.jpg'} alt="Taquizas Chuy" width={128} height={128} />
-                    <h1><strong>Tacos (Taquizas) Chuy&nbsp;</strong><br/>Street Taco Catering in the <br/>South Washington Area</h1>
+                    <div>
+                        <h1><b>Tacos (Taquizas) Chuy</b><p>Street Taco Catering in the <br />South Washington Area</p></h1>
+                    </div>
                 </div>
                 <Footer />
-            </header>
+            </header >
         )
     }
 }

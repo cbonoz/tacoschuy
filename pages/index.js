@@ -55,9 +55,8 @@ class HomeIndex extends React.Component {
 	}
 
 	render() {
-		const siteTitle = 'Taquizos Chuy';
-		const siteDescription = 'Taco Catering Services';
-		const formEmail = `https://formspree.io/${EMAIL}`;
+		const siteTitle = 'Taquizas Chuy';
+		const siteDescription = 'Taco Catering Services in the greater Washington area';
 		return (
 			<Layout>
 				<Helmet>
@@ -126,8 +125,8 @@ class HomeIndex extends React.Component {
 						<p className="home-subtitle">
 							
 							<b>
-								Full Service: Prices typically run between $9-14 per person depending on the number of
-								people and food requested.
+								Full Service: We'll work with you to create a menu that fits your needs and budget 
+								depending on the number of people. Rates typically start at $15 per person.
 							</b>
 						</p>
 						<p className="home-subtitle">
