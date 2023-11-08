@@ -19,6 +19,7 @@
     "react-dom": "18.2.0",
     "react-helmet": "^6.1.0",
     "react-images": "^0.5.19",
+    "react-player": "^2.13.0",
     "sass": "^1.57.1"
   }
 }

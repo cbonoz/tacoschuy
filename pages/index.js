@@ -8,6 +8,9 @@ import Gallery from './components/Gallery';
 import { Col, Row, Grid } from 'react-bootstrap';
 
 import { DEFAULT_IMAGES, FOOD_ITEMS, SIDES, DRINKS, EMAIL, PHONE } from '/utils/constants';
+import ReactPlayer from 'react-player';
+import { DESCRIPTION, COMPANY_NAME, VIDEO_URLS } from '../utils/constants';
+import ItemList from './components/ItemList';
 
 class HomeIndex extends React.Component {
 	constructor() {
@@ -55,13 +58,14 @@ class HomeIndex extends React.Component {
 	}
 
 	render() {
-		const siteTitle = 'Taquizas Chuy';
-		const siteDescription = 'Taco Catering Services in the greater Washington area';
 		return (
 			<Layout>
 				<Helmet>
-					<title>{siteTitle}</title>
-					<meta name="description" content={siteDescription} />
+					<title>{COMPANY_NAME}</title>
+					<meta name="description" content={DESCRIPTION} />
+					<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+					<meta property="og:type" content="website" />
+
 				</Helmet>
 
 				{/* <div className="black-bar" /> */}
@@ -71,66 +75,30 @@ class HomeIndex extends React.Component {
 					<section id="one" name="intro">
 						<header className="major">
 							<Image alt='Banner' src={'/card.jpg'} className="card-img" width={400} height={200} />
-							<h2>Tacos (Taquizas) Chuy</h2>
+							<h2>{COMPANY_NAME}</h2>
 							<hr />
-							<p className="header-sub">Street Taco Catering for the greater South Washington Area.</p>
-							<p>Contact Jesus: {PHONE}</p>
+							<p className="header-sub">{DESCRIPTION}</p>
+							<h3>Contact Jesus:&nbsp;<a href={`tel:${PHONE}`}>{PHONE}</a></h3>
 						</header>
 
-						<p className="header-sub2">
+						<p className="home-subtitle">
 							We serve events big and small for any of the following needs, for groups between 50 to 1000
 							people!
 						</p>
 						<div className="container">
 							<div className="row">
-								<div className="col-sm-12 col-md-6 col-xs-12 col-lg-4">
-									<h2 className="item-category">Fresh Tacos:</h2>
-									<ul>
-										{FOOD_ITEMS.map((item, i) => {
-											return (
-												<li className="food-item" key={i}>
-													{item}
-												</li>
-											);
-										})}
-									</ul>
-								</div>
-								<div className="col-sm-12 col-md-6 col-xs-12 col-lg-4">
-									<h2 className="item-category">Sides:</h2>
-									<ul>
-										{SIDES.map((item, i) => {
-											return (
-												<li className="food-item" key={i}>
-													{item}
-												</li>
-											);
-										})}
-									</ul>
-								</div>
-								<div className="col-sm-12 col-md-6 col-xs-12 col-lg-4">
-									<h2 className="item-category">Drinks:</h2>
-									<ul>
-										{DRINKS.map((item, i) => {
-											return (
-												<li className="food-item" key={i}>
-													{item}
-												</li>
-											);
-										})}
-									</ul>
-								</div>
+								<ItemList title={"Fresh Tacos"} items={FOOD_ITEMS} />
+								<ItemList title={"Sides"} items={SIDES} />
+								<ItemList title={"Drinks"} items={DRINKS} />
 							</div>
 						</div>
 
 						<p className="home-subtitle">
-							
-							<b>
-								Full Service: We will work with you to create a menu that fits your needs and budget 
+								Tacos Chuy is full service: We will work with you to create a menu that fits your needs and budget
 								depending on the number of people. Rates typically start at $15 per person.
-							</b>
 						</p>
 						<p className="home-subtitle">
-							<b>We would love to serve your next event - see below for how to contact us!</b>
+							We would love to serve your next event - see below for how to contact us!
 						</p>
 					</section>
 
@@ -150,12 +118,20 @@ class HomeIndex extends React.Component {
 						{/* <ul className="actions">
                             <li><a href="#" className="button">Full Portfolio</a></li>
                         </ul> */}
+
+
+
 					</section>
+
+					{/* <section> */}
+						{/* <h2>Videos</h2> */}
+						{/* <ReactPlayer url={VIDEO_URLS} playing={true} controls={true} muted /> */}
+					{/* </section> */}
 
 					<section id="three" name="contact">
 						<h2 className="header-sub">Get In Touch!</h2>
 						<p className="header-sub2">
-							Contact us via phone, or send us an email with information on the event you want catered and we will get back to you!<br/><br/>
+							Contact us via phone, or send us an email with information on the event you want catered and we will get back to you!<br /><br />
 							Please include the approximate number of people, location, general items desired, and date.
 
 						</p>
@@ -166,7 +142,7 @@ class HomeIndex extends React.Component {
 										<h3 className="icon fa-home">
 											<span className="label">Address</span>
 										</h3>
-										Taquizas Chuy<br />
+										{COMPANY_NAME}<br />
 										Puyallup, WA 98374<br />
 										United States
 									</li>
@@ -174,14 +150,16 @@ class HomeIndex extends React.Component {
 										<h3 className="icon fa-mobile">
 											<span className="label">Phone</span>
 										</h3>
-										{PHONE}
+										{/* trigger call on click */}
+										<a href={`tel:${PHONE}`}>{PHONE}</a>
 									</li>
 									<li>
 										Contact: &nbsp;
 										<h3 className="icon fa-envelope-o">
 											<span className="label">Email</span>
 										</h3>
-										<a href="#">{EMAIL}</a>
+										{/* trigger email on click */}
+										<a href={`mailto:${EMAIL}`}>{EMAIL}</a>
 									</li>
 								</ul>
 							</div>

@@ -13,10 +13,31 @@
 	font-weight: bold;
 }
 
+.work-item {
+	font-size: 24px !important;
+}
+
+.white {
+	color: white !important;
+}
+
+.icons {
+	font-size: 28px;
+	/* font-weight: bold; */
+}
+
+h1 {
+	font-size: 24px !important;
+}
+
 .food-item {
 	font-weight: bold;
-	font-size: 18px;
+	font-size: 22px;
 	color: black;
+}
+
+.bold {
+	font-weight: bold;
 }
 
 .item-category {
@@ -45,5 +66,6 @@
 }
 
 .home-subtitle {
+	font-weight: bold;;
 	font-size: 20px;
 }

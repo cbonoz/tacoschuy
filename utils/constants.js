@@ -18,6 +18,9 @@ import full06 from '/pages/assets/images/fulls/06.jpg'
 import full07 from '/pages/assets/images/fulls/07.jpg'
 import full08 from '/pages/assets/images/fulls/08.jpg'
 
+export const COMPANY_NAME = 'Tacos (Taquizas) Chuy'
+export const DESCRIPTION = 'Mexican Catering for the greater South Washington area'
+
 export const DEFAULT_IMAGES = [
     {
         id: '1',
@@ -77,6 +80,8 @@ export const DEFAULT_IMAGES = [
     // },
 ]
 
+export const VIDEO_URLS = ['https://www.youtube.com/watch?v=LXb3EKWsInQ']
+
 export const FOOD_ITEMS = [
     'Steak: Carne Asada',
     'Chicken: Pollo',
@@ -96,7 +101,11 @@ export const SIDES = [
     'Salsas',
     'Guacamole',
     'Dips',
-    'Fresh Vegetables'
+    'Fresh Vegetables',
+    'Mole',
+    'Tortillas',
+    'Chips',
+    'Tortas',
 ]
 
 export const DRINKS = ['Horchata', 'Sodas', 'Water', 'Coffee', 'Jamaica', 'Aguas Frescas']

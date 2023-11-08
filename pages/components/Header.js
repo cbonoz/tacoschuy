@@ -3,6 +3,7 @@ import Image from 'next/image'
 import bg from '../assets/images/bg.jpg'
 
 import Footer from './Footer'
+import { COMPANY_NAME } from '../../utils/constants'
 
 class Header extends React.Component {
     render() {
@@ -13,9 +14,9 @@ class Header extends React.Component {
                 // opacity: '0.5',
             }}>
                 <div className="inner">
-                    <Image src={'/avatar.jpg'} alt="Taquizas Chuy" width={128} height={128} />
+                    <Image src={'/avatar.jpg'} alt="Taquizas Chuy" width={150} height={150} />
                     <div>
-                        <h1><b>Tacos (Taquizas) Chuy</b><p>Street Taco Catering in the <br />South Washington Area</p></h1>
+                        <h1><b>{COMPANY_NAME}</b><p>Street Taco Catering in the <br />South Washington Area</p></h1>
                     </div>
                 </div>
                 <Footer />
