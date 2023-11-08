@@ -114,13 +114,9 @@ class HomeIndex extends React.Component {
 								description
 							}))}
 						/>
-
 						{/* <ul className="actions">
                             <li><a href="#" className="button">Full Portfolio</a></li>
                         </ul> */}
-
-
-
 					</section>
 
 					{/* <section> */}
@@ -129,9 +125,9 @@ class HomeIndex extends React.Component {
 					{/* </section> */}
 
 					<section id="three" name="contact">
-						<h2 className="header-sub">Get In Touch!</h2>
+						<h2>Get In Touch!</h2>
 						<p className="header-sub2">
-							Contact us via phone, or send us an email with information on the event you want catered and we will get back to you!<br /><br />
+							Contact us via phone, or send us an email with information on the event you want catered and we will get back to you!<br />
 							Please include the approximate number of people, location, general items desired, and date.
 
 						</p>

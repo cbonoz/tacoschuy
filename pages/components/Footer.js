@@ -18,9 +18,9 @@ class Footer extends React.Component {
 							</Link>
 						</li>
 					</ul>
-					<ul className="copyright">
-						<li>Taquizas Chuy &copy;{new Date().getFullYear()}</li>
-					</ul>
+					<h1 className="copyright centered">
+						Taquizas Chuy &copy;{new Date().getFullYear()}
+					</h1>
 				</div>
 			</div>
 		);
