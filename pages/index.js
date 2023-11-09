@@ -5,12 +5,12 @@ import Image from 'next/image'
 import Layout from './components/layout';
 // import Lightbox from 'react-images'
 import Gallery from './components/Gallery';
-import { Col, Row, Grid } from 'react-bootstrap';
 
 import { DEFAULT_IMAGES, FOOD_ITEMS, SIDES, DRINKS, EMAIL, PHONE } from '/utils/constants';
 import ReactPlayer from 'react-player';
 import { DESCRIPTION, COMPANY_NAME, VIDEO_URLS } from '../utils/constants';
 import ItemList from './components/ItemList';
+import Head from 'next/head';
 
 class HomeIndex extends React.Component {
 	constructor() {
@@ -60,13 +60,17 @@ class HomeIndex extends React.Component {
 	render() {
 		return (
 			<Layout>
-				<Helmet>
-					<title>{COMPANY_NAME}</title>
+				<Head>
+					<title>Tacos Chuy | Mexican street food catering in South Washington</title>
 					<meta name="description" content={DESCRIPTION} />
 					<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+					{/* robots */}
+					<meta name="robots" content="index, follow" />
+					{/* keywords */}
+					<meta name="keywords" content="taquizas, tacos, washington, south hill, catering, mexican food, mexican catering, mexican food catering, taco catering, taquizas catering, taquizas chuy, tacos chuy, taquizas chuy catering, tacos chuy catering, chuy catering, chuy taquizas, chuy tacos, chuy taquizas catering, chuy tacos catering, catering"/>
 					<meta property="og:type" content="website" />
 
-				</Helmet>
+				</Head>
 
 				{/* <div className="black-bar" /> */}
 				<div id="main">
@@ -127,7 +131,7 @@ class HomeIndex extends React.Component {
 					<section id="three" name="contact">
 						<h2>Get In Touch!</h2>
 						<p className="header-sub2">
-							Contact us via phone, or send us an email with information on the event you want catered and we will get back to you!<br />
+							Contact us via phone, or send us an email with information on the event you want catered and we will get back to you! All interested inquiries welcome.<br /><br/>
 							Please include the approximate number of people, location, general items desired, and date.
 
 						</p>

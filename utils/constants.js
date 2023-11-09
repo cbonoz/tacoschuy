@@ -4,8 +4,6 @@ import thumb01 from '/pages/assets/images/thumbs/01.jpg'
 import thumb02 from '/pages/assets/images/thumbs/02.jpg'
 import thumb03 from '/pages/assets/images/thumbs/03.jpg'
 import thumb04 from '/pages/assets/images/thumbs/04.jpg'
-import thumb05 from '/pages/assets/images/thumbs/05.jpg'
-import thumb06 from '/pages/assets/images/thumbs/06.jpg'
 import thumb07 from '/pages/assets/images/thumbs/07.jpg'
 import thumb08 from '/pages/assets/images/thumbs/08.jpg'
 
@@ -13,13 +11,11 @@ import full01 from '/pages/assets/images/fulls/01.jpg'
 import full02 from '/pages/assets/images/fulls/02.jpg'
 import full03 from '/pages/assets/images/fulls/03.jpg'
 import full04 from '/pages/assets/images/fulls/04.jpg'
-import full05 from '/pages/assets/images/fulls/05.jpg'
-import full06 from '/pages/assets/images/fulls/06.jpg'
 import full07 from '/pages/assets/images/fulls/07.jpg'
 import full08 from '/pages/assets/images/fulls/08.jpg'
 
 export const COMPANY_NAME = 'Tacos (Taquizas) Chuy'
-export const DESCRIPTION = 'Mexican Catering for the greater South Washington area'
+export const DESCRIPTION = 'Mexican food catering for the greater South Washington area'
 
 export const DEFAULT_IMAGES = [
     {
