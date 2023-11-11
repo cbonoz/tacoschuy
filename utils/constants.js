@@ -76,7 +76,7 @@ export const DEFAULT_IMAGES = [
     // },
 ]
 
-export const VIDEO_URLS = ['https://www.youtube.com/watch?v=LXb3EKWsInQ']
+export const VIDEO_URLS = ['https://youtube.com/shorts/hhGmFjf07oo?feature=share']
 
 export const FOOD_ITEMS = [
     'Steak: Carne Asada',

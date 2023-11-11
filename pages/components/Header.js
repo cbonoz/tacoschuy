@@ -17,8 +17,8 @@ class Header extends React.Component {
                     <Image src={'/avatar.jpg'} alt="Taquizas Chuy" width={150} height={150} />
                     <div>
                         <h1>{COMPANY_NAME}
-                        <p>{DESCRIPTION}</p>
                         </h1>
+                        <p>{DESCRIPTION}</p>
                     </div>
                 </div>
                 <Footer />

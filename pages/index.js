@@ -11,6 +11,7 @@ import ReactPlayer from 'react-player';
 import { DESCRIPTION, COMPANY_NAME, VIDEO_URLS } from '../utils/constants';
 import ItemList from './components/ItemList';
 import Head from 'next/head';
+import VideoPlayer from './components/VideoPlayer';
 
 class HomeIndex extends React.Component {
 	constructor() {
@@ -67,7 +68,7 @@ class HomeIndex extends React.Component {
 					{/* robots */}
 					<meta name="robots" content="index, follow" />
 					{/* keywords */}
-					<meta name="keywords" content="taquizas, tacos, washington, south hill, catering, mexican food, mexican catering, mexican food catering, taco catering, taquizas catering, taquizas chuy, tacos chuy, taquizas chuy catering, tacos chuy catering, chuy catering, chuy taquizas, chuy tacos, chuy taquizas catering, chuy tacos catering, catering"/>
+					<meta name="keywords" content="taquizas, tacos, washington, south hill, catering, mexican food, mexican catering, mexican food catering, taco catering, taquizas catering, taquizas chuy, tacos chuy, taquizas chuy catering, tacos chuy catering, chuy catering, chuy taquizas, chuy tacos, chuy taquizas catering, chuy tacos catering, catering" />
 					<meta property="og:type" content="website" />
 
 				</Head>
@@ -90,7 +91,7 @@ class HomeIndex extends React.Component {
 							people!
 						</p>
 						<div className="container">
-							<div className="row">
+							<div className="row" style={{ display: 'flex' }}>
 								<ItemList title={"Fresh Tacos"} items={FOOD_ITEMS} />
 								<ItemList title={"Sides"} items={SIDES} />
 								<ItemList title={"Drinks"} items={DRINKS} />
@@ -98,8 +99,8 @@ class HomeIndex extends React.Component {
 						</div>
 
 						<p className="home-subtitle">
-								Tacos Chuy is full service: We will work with you to create a menu that fits your needs and budget
-								depending on the number of people. Rates typically start at $15 per person.
+							Tacos Chuy is full service: We will work with you to create a menu that fits your needs and budget
+							depending on the number of people. Rates typically start at $15 per person.
 						</p>
 						<p className="home-subtitle">
 							We would love to serve your next event - see below for how to contact us!
@@ -123,15 +124,14 @@ class HomeIndex extends React.Component {
                         </ul> */}
 					</section>
 
-					{/* <section> */}
-						{/* <h2>Videos</h2> */}
-						{/* <ReactPlayer url={VIDEO_URLS} playing={true} controls={true} muted /> */}
-					{/* </section> */}
+					<section>
+						<VideoPlayer/>
+					</section>
 
 					<section id="three" name="contact">
 						<h2>Get In Touch!</h2>
 						<p className="header-sub2">
-							Contact us via phone, or send us an email with information on the event you want catered and we will get back to you! All interested inquiries welcome.<br /><br/>
+							Contact us via phone, or send us an email with information on the event you want catered and we will get back to you! All interested inquiries welcome.<br /><br />
 							Please include the approximate number of people, location, general items desired, and date.
 
 						</p>

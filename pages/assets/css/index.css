@@ -25,6 +25,10 @@
 	color: white !important
 }
 
+.inner p {
+	font-size: 20px;
+}
+
 .copyright {
 	display: block;
 }
