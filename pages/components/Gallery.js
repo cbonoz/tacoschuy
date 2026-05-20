@@ -14,22 +14,22 @@ export default function Gallery({ images }) {
     }
 
     return (
-        <div>
-            <div className="row">
-                {images.map((obj, i) => (
-                    <article className="6u 12u$(xsmall) work-item" key={i}>
-                        <a
-                            className="fit thumb image-margin"
-                            href={obj.src?.src || '#'}
-                            onClick={(e) => openLightbox(i, e)}
-                        >
-                            <Image alt={obj.caption} src={obj.thumbnail} width={300} height={400} />
-                        </a>
+        <div className="gallery-grid">
+            {images.map((obj, i) => (
+                <div className="gallery-item" key={i} onClick={(e) => openLightbox(i, e)}>
+                    <Image
+                        alt={obj.caption}
+                        src={obj.thumbnail}
+                        width={400}
+                        height={500}
+                        style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+                    />
+                    <div className="gallery-overlay">
                         <h3>{obj.caption}</h3>
                         <p>{obj.description}</p>
-                    </article>
-                ))}
-            </div>
+                    </div>
+                </div>
+            ))}
         </div>
     )
 }

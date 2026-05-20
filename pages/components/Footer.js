@@ -1,29 +1,32 @@
 import Link from 'next/link'
-import { FaTiktok } from 'react-icons/fa'
-import { EMAIL, PHONE, TIKTOK_URL } from '../../utils/constants'
+import { FaTiktok, FaEnvelope, FaPhone } from 'react-icons/fa'
+import { EMAIL, PHONE, TIKTOK_URL, COMPANY_NAME } from '../../utils/constants'
 
 export default function Footer() {
     return (
-        <footer className='white'>
-            <div>
-                <ul className="icons">
+        <footer className="footer">
+            <div className="footer-inner">
+                <div className="footer-brand">{COMPANY_NAME}</div>
+                <ul className="footer-social">
                     <li>
-                        <Link href={`mailto:${EMAIL}`} className="icon fa-envelope-o fa-2xl">
+                        <Link href={`mailto:${EMAIL}`} aria-label="Email">
+                            <FaEnvelope />
                         </Link>
                     </li>
                     <li>
-                        <Link href={`tel:${PHONE}`} className="icon fa-phone fa-2xl">
+                        <Link href={`tel:${PHONE}`} aria-label="Phone">
+                            <FaPhone />
                         </Link>
                     </li>
                     <li>
                         <Link href={TIKTOK_URL} target="_blank" rel="noopener noreferrer" aria-label="TikTok">
-                            <FaTiktok size={28} />
+                            <FaTiktok />
                         </Link>
                     </li>
                 </ul>
-                <h1 className="copyright centered">
-                    Taquizas Chuy &copy;{new Date().getFullYear()}
-                </h1>
+                <p className="footer-copy">
+                    {COMPANY_NAME} &copy; {new Date().getFullYear()}. All rights reserved.
+                </p>
             </div>
         </footer>
     )

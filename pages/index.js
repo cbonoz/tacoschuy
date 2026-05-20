@@ -1,6 +1,8 @@
+import { useEffect } from 'react'
 import Image from 'next/image'
 
 import Layout from './components/layout'
+import Header from './components/Header'
 import Gallery from './components/Gallery'
 
 import { DEFAULT_IMAGES, FOOD_ITEMS, SIDES, DRINKS, EMAIL, PHONE, BASE_URL, TIKTOK_URL } from '/utils/constants'
@@ -12,6 +14,23 @@ import dynamic from 'next/dynamic'
 const VideoPlayer = dynamic(() => import('./components/VideoPlayer'), { ssr: false })
 
 export default function HomeIndex() {
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            (entries) => {
+                entries.forEach((entry) => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible')
+                    }
+                })
+            },
+            { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
+        )
+
+        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el))
+
+        return () => observer.disconnect()
+    }, [])
+
     return (
         <Layout>
             <Head>
@@ -74,90 +93,89 @@ export default function HomeIndex() {
                 />
             </Head>
 
-            <main id="main">
-                <section id="one" name="intro">
-                    <header className="major">
-                        <Image alt='Banner' src={'/card.jpg'} className="card-img" width={400} height={200} />
-                        <h2>{COMPANY_NAME}</h2>
-                        <hr />
-                        <p className="header-sub">{DESCRIPTION}</p>
-                        <h3>Contact Jesus:&nbsp;<a href={`tel:${PHONE}`}>{PHONE}</a></h3>
-                    </header>
+            <Header />
 
-                    <p className="home-subtitle">
-                        We serve events big and small for any of the following needs, for groups between 50 to 1000
-                        people!
-                    </p>
-                    <div className="container">
-                        <div className="row" style={{ display: 'flex' }}>
-                            <ItemList title={"Fresh Tacos"} items={FOOD_ITEMS} />
-                            <ItemList title={"Sides"} items={SIDES} />
-                            <ItemList title={"Drinks"} items={DRINKS} />
-                        </div>
+            {/* Menu Section */}
+            <section id="menu" className="section section-alt">
+                <div className="container">
+                    <div className="section-header reveal">
+                        <h2>Our Menu</h2>
+                        <p>We serve events big and small for any of the following needs, for groups between 50 to 1000 people!</p>
                     </div>
-
-                    <p className="home-subtitle">
+                    <div className="menu-grid">
+                        <div className="reveal reveal-delay-1"><ItemList title={"Fresh Tacos"} items={FOOD_ITEMS} /></div>
+                        <div className="reveal reveal-delay-2"><ItemList title={"Sides"} items={SIDES} /></div>
+                        <div className="reveal reveal-delay-3"><ItemList title={"Drinks"} items={DRINKS} /></div>
+                    </div>
+                    <p className="reveal" style={{ textAlign: 'center', marginTop: '2rem', fontSize: '1.125rem', color: 'var(--color-text-light)' }}>
                         Tacos Chuy is full service: We will work with you to create a menu that fits your needs and budget
                         depending on the number of people. Rates typically start at $15 per person.
                     </p>
-                    <p className="home-subtitle">
-                        We would love to serve your next event - see below for how to contact us!
-                    </p>
-                </section>
+                </div>
+            </section>
 
-                <section id="two" name="gallery">
-                    <h2>Recent Events</h2>
+            {/* Gallery Section */}
+            <section id="gallery" className="section">
+                <div className="container">
+                    <div className="section-header reveal">
+                        <h2>Recent Events</h2>
+                        <p>See how we bring the fiesta to weddings, parties, and special occasions</p>
+                    </div>
+                    <div className="reveal">
+                        <Gallery
+                            images={DEFAULT_IMAGES.map(({ id, src, thumbnail, caption, description }) => ({
+                                source: src,
+                                src,
+                                thumbnail,
+                                caption,
+                                description
+                            }))}
+                        />
+                    </div>
+                </div>
+            </section>
 
-                    <Gallery
-                        images={DEFAULT_IMAGES.map(({ id, src, thumbnail, caption, description }) => ({
-                            source: src,
-                            src,
-                            thumbnail,
-                            caption,
-                            description
-                        }))}
-                    />
-                </section>
+            {/* Video Section */}
+            <section id="video" className="section section-alt video-section">
+                <div className="container">
+                    <div className="section-header reveal">
+                        <h2>See Us In Action</h2>
+                        <p>We don&apos;t just cater events — we taco &apos;bout them for years!</p>
+                    </div>
+                    <div className="video-wrapper reveal">
+                        <VideoPlayer />
+                    </div>
+                </div>
+            </section>
 
-                <section>
-                    <VideoPlayer />
-                </section>
-
-                <section id="three" name="contact">
-                    <h2>Get In Touch!</h2>
-                    <p className="header-sub2">
-                        Contact us via phone, or send us an email with information on the event you want catered and we will get back to you! All interested inquiries welcome.<br /><br />
-                        Please include the approximate number of people, location, general items desired, and date.
-                    </p>
-                    <div className="row">
-                        <div className="4u 12u$(small)">
-                            <ul className="labeled-icons">
-                                <li>
-                                    <h3 className="icon fa-home">
-                                        <span className="label">Address</span>
-                                    </h3>
-                                    {COMPANY_NAME}<br />
-                                    Puyallup, WA 98374<br />
-                                    United States
-                                </li>
-                                <li>
-                                    <h3 className="icon fa-mobile">
-                                        <span className="label">Phone</span>
-                                    </h3>
-                                    <a href={`tel:${PHONE}`}>{PHONE}</a>
-                                </li>
-                                <li>
-                                    Contact: &nbsp;
-                                    <h3 className="icon fa-envelope-o">
-                                        <span className="label">Email</span>
-                                    </h3>
-                                    <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
-                                </li>
-                            </ul>
+            {/* Contact Section */}
+            <section id="contact" className="section section-dark">
+                <div className="container">
+                    <div className="section-header reveal">
+                        <h2>Get In Touch!</h2>
+                        <p>Contact us via phone, or send us an email with information on the event you want catered and we will get back to you!</p>
+                    </div>
+                    <div className="contact-grid reveal">
+                        <div className="contact-card reveal-delay-1">
+                            <div className="contact-icon">📍</div>
+                            <h3>Location</h3>
+                            <p>{COMPANY_NAME}<br />Puyallup, WA 98374<br />United States</p>
+                        </div>
+                        <div className="contact-card reveal-delay-2">
+                            <div className="contact-icon">📞</div>
+                            <h3>Phone</h3>
+                            <a href={`tel:${PHONE}`}>{PHONE}</a>
+                            <p>Call Jesus directly</p>
+                        </div>
+                        <div className="contact-card reveal-delay-3">
+                            <div className="contact-icon">✉️</div>
+                            <h3>Email</h3>
+                            <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+                            <p>Include event details</p>
                         </div>
                     </div>
-                </section>
-            </main>
+                </div>
+            </section>
         </Layout>
     )
 }

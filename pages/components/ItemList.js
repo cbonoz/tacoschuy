@@ -1,18 +1,24 @@
-import React from "react";
+import { FaCheck } from 'react-icons/fa'
 
-const ItemList = ({ items, title }) => {
-
-    return (<div className="col-sm-12 col-md-6 col-xs-12 col-lg-4 bold">
-        <h2 className="item-category">{title}:</h2>
-        <ul>
-            {(items || []).map((item, i) => {
-                return (
-                    <li className="food-item bold" key={i}>
-                        {item}
-                    </li>
-                );
-            })}
-        </ul>
-    </div>)
+const ICONS = {
+    'Fresh Tacos': '🌮',
+    'Sides': '🥗',
+    'Drinks': '🥤'
 }
-export default ItemList;
+
+export default function ItemList({ items, title }) {
+    return (
+        <div className="menu-card">
+            <h3>
+                <span>{ICONS[title] || '•'}</span> {title}
+            </h3>
+            <ul>
+                {(items || []).map((item, i) => (
+                    <li key={i}>
+                        <FaCheck size={12} /> {item}
+                    </li>
+                ))}
+            </ul>
+        </div>
+    )
+}
