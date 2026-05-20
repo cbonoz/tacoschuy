@@ -155,6 +155,42 @@ export default function HomeIndex() {
                         <h2>Get In Touch!</h2>
                         <p>Contact us via phone, or send us an email with information on the event you want catered and we will get back to you!</p>
                     </div>
+
+                    <div className="reveal info-box" style={{
+                        background: 'rgba(255,255,255,0.08)',
+                        border: '1px solid rgba(255,255,255,0.15)',
+                        borderRadius: 'var(--radius-lg)',
+                        padding: '1.5rem 2rem',
+                        maxWidth: '600px',
+                        margin: '0 auto 2.5rem',
+                        textAlign: 'center',
+                    }}>
+                        <h3 style={{
+                            color: 'var(--color-primary)',
+                            fontSize: '1.1rem',
+                            marginBottom: '1rem',
+                            fontFamily: 'var(--font-heading)',
+                        }}>
+                            📋 Have This Info Ready
+                        </h3>
+                        <ul style={{
+                            color: 'rgba(255,255,255,0.85)',
+                            fontSize: '1rem',
+                            lineHeight: '2.2',
+                            listStyle: 'none',
+                            padding: 0,
+                            margin: 0,
+                            display: 'inline-block',
+                            textAlign: 'left',
+                        }}>
+                            <li>👥 Approximate number of guests</li>
+                            <li>📍 Event location</li>
+                            <li>🌮 Desired menu items</li>
+                            <li>📅 Event date &amp; time</li>
+                            <li>📝 Any special requests or dietary needs</li>
+                        </ul>
+                    </div>
+
                     <div className="contact-grid reveal">
                         <div className="contact-card reveal-delay-1">
                             <div className="contact-icon">📍</div>
@@ -174,6 +210,16 @@ export default function HomeIndex() {
                             <p>Include event details</p>
                         </div>
                     </div>
+
+                    <p className="reveal" style={{
+                        textAlign: 'center',
+                        marginTop: '2rem',
+                        color: 'rgba(255,255,255,0.7)',
+                        fontSize: '1rem',
+                        fontStyle: 'italic',
+                    }}>
+                        Couldn&apos;t reach us by phone? Send us an email and we&apos;ll get back to you as soon as we&apos;re free!
+                    </p>
                 </div>
             </section>
         </Layout>
