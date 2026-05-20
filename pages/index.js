@@ -5,7 +5,7 @@ import Layout from './components/layout'
 import Header from './components/Header'
 import Gallery from './components/Gallery'
 
-import { DEFAULT_IMAGES, FOOD_ITEMS, SIDES, DRINKS, EMAIL, PHONE, BASE_URL, TIKTOK_URL } from '/utils/constants'
+import { DEFAULT_IMAGES, FOOD_ITEMS, SIDES, DRINKS, EMAIL, PHONE, BASE_URL, TIKTOK_URL, FACEBOOK_URL, INSTAGRAM_URL } from '/utils/constants'
 import { DESCRIPTION, COMPANY_NAME } from '../utils/constants'
 import ItemList from './components/ItemList'
 import Head from 'next/head'
@@ -95,6 +95,46 @@ export default function HomeIndex() {
 
             <Header />
 
+            {/* About Section */}
+            <section id="about" className="section">
+                <div className="container">
+                    <div className="section-header reveal">
+                        <h2>About Tacos (Taquizas) Chuy</h2>
+                        <p>Authentic Mexican street food catering in Puyallup, Tacoma, Lakewood, and beyond</p>
+                    </div>
+                    <div className="reveal about-content" style={{ maxWidth: '800px', margin: '0 auto', lineHeight: '1.8', fontSize: '1.0625rem', color: 'var(--color-text)' }}>
+                        <p>
+                            We bring the bold flavors of Mexican street food directly to your event.
+                        </p>
+                        <p>
+                            Based in Puyallup, WA, Tacos (Taquizas) Chuy specializes in full-service <a href="#menu">taquiza catering</a> for weddings, corporate events, 
+                            birthday parties, quinceañeras, and special celebrations throughout the greater South Washington 
+                            area including Tacoma, Lakewood, and the surrounding regions.
+                        </p>
+                        <p>
+                            Browse our <a href="#gallery">recent event photos</a> to see 
+                            our setup, or <a href="#contact">contact us</a> to book your celebration.
+                        </p>
+                        <p>
+                            Our menu features a wide selection of traditional meats prepared from family recipes — 
+                            including carne asada (steak), pollo (chicken), carnitas (pork), birria, adobada, chorizo, 
+                            buche, tripas, lengua, and cabeza. Every taco is made to order and served fresh on site.
+                        </p>
+                        <p>
+                            We also serve classic sides like rice, beans, salsas, guacamole, fresh vegetables, mole, 
+                            tortillas, chips, and tortas. Pair your meal with refreshing aguas frescas including 
+                            horchata and jamaica, or choose from sodas, water, and coffee.
+                        </p>
+                        <p>
+                            Whether you are planning an intimate gathering or a large celebration for up to 1,000 
+                            guests, we work with you to create a custom menu that fits your budget and dietary needs. 
+                            Our full-service catering includes setup, on-site cooking, service, and cleanup — so you 
+                            can enjoy your event without the stress.
+                        </p>
+                    </div>
+                </div>
+            </section>
+
             {/* Menu Section */}
             <section id="menu" className="section section-alt">
                 <div className="container">
@@ -145,6 +185,17 @@ export default function HomeIndex() {
                     <div className="video-wrapper reveal">
                         <VideoPlayer />
                     </div>
+                    <p className="reveal" style={{ textAlign: 'center', marginTop: '1.5rem', display: 'flex', justifyContent: 'center', gap: '1.5rem', flexWrap: 'wrap' }}>
+                        <a href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-primary)', fontWeight: 600 }}>
+                            Follow on Facebook &rarr;
+                        </a>
+                        <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-primary)', fontWeight: 600 }}>
+                            Follow on Instagram &rarr;
+                        </a>
+                        <a href={TIKTOK_URL} target="_blank" rel="noopener noreferrer" style={{ color: 'var(--color-primary)', fontWeight: 600 }}>
+                            Follow on TikTok &rarr;
+                        </a>
+                    </p>
                 </div>
             </section>
 

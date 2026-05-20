@@ -15,7 +15,7 @@ import full07 from '/pages/assets/images/fulls/07.jpg'
 import full08 from '/pages/assets/images/fulls/08.jpg'
 
 export const COMPANY_NAME = 'Tacos (Taquizas) Chuy'
-export const DESCRIPTION = 'Mexican food catering for the greater South Washington area'
+export const DESCRIPTION = 'Authentic Mexican street food catering in Puyallup, Tacoma, Lakewood, and beyond'
 
 export const DEFAULT_IMAGES = [
     {
@@ -107,4 +107,6 @@ export const DRINKS = ['Horchata', 'Sodas', 'Water', 'Coffee', 'Jamaica', 'Aguas
 export const EMAIL = 'jesusmiranda702@gmail.com'
 export const PHONE = '253-620-0380'
 export const TIKTOK_URL = 'https://www.tiktok.com/@taquizachuy253'
+export const FACEBOOK_URL = 'https://www.facebook.com/p/Taquizas-chuy-100063897551649/'
+export const INSTAGRAM_URL = 'https://www.instagram.com/taquizaschuy253/'
 export const BASE_URL = 'https://tacoschuy.com'

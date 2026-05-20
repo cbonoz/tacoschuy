@@ -6,13 +6,17 @@ export default function Header() {
         <>
             <nav className="navbar">
                 <div className="navbar-inner">
-                    <span className="nav-brand">{COMPANY_NAME}</span>
+                    <span className="nav-brand">
+                        <img src="/tiktok_icon.png" alt="Tacos Chuy" className="nav-brand-icon" />
+                        {COMPANY_NAME}
+                    </span>
                     <ul className="nav-links">
+                        <li><a href="#about">About</a></li>
                         <li><a href="#menu">Menu</a></li>
                         <li><a href="#gallery">Gallery</a></li>
-                        <li><a href="#video">Find Us on TikTok</a></li>
+                        <li><a href="#video">TikTok</a></li>
                         <li><a href="#contact">Contact</a></li>
-                        <li><a href={`tel:${PHONE}`} className="nav-cta"><FaPhone size={14} /> Call Now</a></li>
+                        <li><a href={`tel:${PHONE}`} className="nav-cta"><FaPhone size={14} /> Book Catering</a></li>
                     </ul>
                 </div>
             </nav>
