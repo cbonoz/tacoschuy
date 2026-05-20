@@ -76,8 +76,6 @@ export const DEFAULT_IMAGES = [
     // },
 ]
 
-export const VIDEO_URLS = ['https://youtube.com/shorts/hhGmFjf07oo?feature=share']
-
 export const FOOD_ITEMS = [
     'Steak: Carne Asada',
     'Chicken: Pollo',
@@ -108,3 +106,5 @@ export const DRINKS = ['Horchata', 'Sodas', 'Water', 'Coffee', 'Jamaica', 'Aguas
 
 export const EMAIL = 'jesusmiranda702@gmail.com'
 export const PHONE = '253-620-0380'
+export const TIKTOK_URL = 'https://www.tiktok.com/@taquizachuy253'
+export const BASE_URL = 'https://tacoschuy.com'

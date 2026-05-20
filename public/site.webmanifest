@@ -1,0 +1,16 @@
+{
+  "name": "Tacos (Taquizas) Chuy",
+  "short_name": "Taquizas Chuy",
+  "description": "Mexican food catering for the greater South Washington area",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#333333",
+  "icons": [
+    {
+      "src": "/icon.png",
+      "sizes": "any",
+      "type": "image/png"
+    }
+  ]
+}

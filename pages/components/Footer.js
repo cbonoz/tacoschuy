@@ -1,30 +1,30 @@
-import React from 'react';
 import Link from 'next/link'
-import { EMAIL, PHONE } from '../../utils/constants';
+import { FaTiktok } from 'react-icons/fa'
+import { EMAIL, PHONE, TIKTOK_URL } from '../../utils/constants'
 
-class Footer extends React.Component {
-	render() {
-		return (
-			<div className='white'>
-				<div>
-					<ul className="icons">
-						<li>
-							<Link href={`mailto:${EMAIL}`} className="icon fa-envelope-o fa-2xl">
-							</Link>
-						</li>
-						<li>
-							<Link href={`tel:${PHONE}`} className="icon fa-phone fa-2xl">
-
-							</Link>
-						</li>
-					</ul>
-					<h1 className="copyright centered">
-						Taquizas Chuy &copy;{new Date().getFullYear()}
-					</h1>
-				</div>
-			</div>
-		);
-	}
+export default function Footer() {
+    return (
+        <footer className='white'>
+            <div>
+                <ul className="icons">
+                    <li>
+                        <Link href={`mailto:${EMAIL}`} className="icon fa-envelope-o fa-2xl">
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href={`tel:${PHONE}`} className="icon fa-phone fa-2xl">
+                        </Link>
+                    </li>
+                    <li>
+                        <Link href={TIKTOK_URL} target="_blank" rel="noopener noreferrer" aria-label="TikTok">
+                            <FaTiktok size={28} />
+                        </Link>
+                    </li>
+                </ul>
+                <h1 className="copyright centered">
+                    Taquizas Chuy &copy;{new Date().getFullYear()}
+                </h1>
+            </div>
+        </footer>
+    )
 }
-
-export default Footer;
