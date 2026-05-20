@@ -24,6 +24,24 @@
   --max-width: 1200px;
 }
 
+@media (prefers-color-scheme: dark) {
+  #about {
+    color: var(--color-text-light);
+  }
+
+  #about .section-header h2 {
+    color: var(--color-white);
+  }
+
+  #about .section-header p {
+    color: rgba(255, 255, 255, 0.75);
+  }
+
+  #about .about-content {
+    color: rgba(255, 255, 255, 0.85) !important;
+  }
+}
+
 * {
   box-sizing: border-box;
   padding: 0;
@@ -470,6 +488,26 @@ img {
 }
 
 .contact-card a:hover {
+  color: var(--color-primary);
+}
+
+.contact-card .reveal-link {
+  display: inline-block;
+  padding: 0.35rem 1rem;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px dashed rgba(255, 255, 255, 0.3);
+  border-radius: 6px;
+  color: rgba(255, 255, 255, 0.9);
+  cursor: pointer;
+  transition: background 0.2s ease, border-color 0.2s ease;
+  word-break: break-all;
+  max-width: 100%;
+  line-height: 1.4;
+}
+
+.contact-card .reveal-link:hover {
+  background: rgba(255, 255, 255, 0.15);
+  border-color: var(--color-primary);
   color: var(--color-primary);
 }
 

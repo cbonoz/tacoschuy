@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 import Image from 'next/image'
 
 import Layout from './components/layout'
@@ -14,6 +14,7 @@ import dynamic from 'next/dynamic'
 const VideoPlayer = dynamic(() => import('./components/VideoPlayer'), { ssr: false })
 
 export default function HomeIndex() {
+    const [revealed, setRevealed] = useState(false)
     useEffect(() => {
         const observer = new IntersectionObserver(
             (entries) => {
@@ -257,7 +258,13 @@ export default function HomeIndex() {
                         <div className="contact-card reveal-delay-3">
                             <div className="contact-icon">✉️</div>
                             <h3>Email</h3>
-                            <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+                            {revealed ? (
+                                <a href={`mailto:${EMAIL}`}>{EMAIL}</a>
+                            ) : (
+                                <a href="#" className="reveal-link" onClick={(e) => { e.preventDefault(); setRevealed(true); }}>
+                                    Click to reveal
+                                </a>
+                            )}
                             <p>Include event details</p>
                         </div>
                     </div>
